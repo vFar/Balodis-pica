@@ -12,7 +12,11 @@ public class Pica {
 		}
 		
 		JOptionPane.showMessageDialog(null, "\tMargaritas picas sastāvdaļas"
-				+ "\nMocarella, tomātu mērce, eļļas un ķiploku mērce, oregano");
+				+ "\nMozarella, tomātu mērce, eļļas un ķiploku mērce, oregano");
+		
+		
+		JOptionPane.showMessageDialog(null, "\t1889. gada 11. jūnijā, pavāru Raffaele Esposito uzaicināja izcept picu Savojas Margaritai, kas bija karaļa Umberto sieva, "
+				+ "picas sastāvdaļas tika izvēlētas pēc itāļu karoga krāsām - sarkans(tomāti), balts(mozzarella) un zaļš(baziliks)");
 		
 		return cena;
 	}
@@ -65,7 +69,6 @@ public class Pica {
 					adrese = JOptionPane.showInputDialog("Uz kuru adresi piegādāt picu?");
 					talrunis = JOptionPane.showInputDialog("Kāds Jums talrunis uz, kuru zvanīt?");
 				}
-				
 				
 				
 				do {
