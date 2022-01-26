@@ -11,6 +11,8 @@ public class Pica {
 			cena = cena + 10.34;
 		}
 		
+		JOptionPane.showMessageDialog(null, "\tMargaritas picas sastāvdaļas"
+				+ "\nMocarella, tomātu mērce, eļļas un ķiploku mērce, oregano");
 		
 		return cena;
 	}
@@ -53,19 +55,21 @@ public class Pica {
 				if(piegade1.equalsIgnoreCase("jā")) {
 					piegade = true;
 					cena = cena + 3;
-					adrese = JOptionPane.showInputDialog("Uz kuru adresi piegādāt picu?");
-					talrunis = JOptionPane.showInputDialog("Kāds Jums talrunis uz, kuru zvanīt?");
 				}else if(piegade1.equalsIgnoreCase("nē")) {
 					piegade = false;
-				}else {
-					JOptionPane.showMessageDialog(null, "Vajadzēja ievadīt tikai jā vai nē!");
 				}
-				}while(!piegade1.equalsIgnoreCase("nē"));
+				
+				}while(!piegade1.equalsIgnoreCase("jā") && !piegade1.equalsIgnoreCase("nē"));
+				
+				if(piegade==true) {
+					adrese = JOptionPane.showInputDialog("Uz kuru adresi piegādāt picu?");
+					talrunis = JOptionPane.showInputDialog("Kāds Jums talrunis uz, kuru zvanīt?");
+				}
 				
 				
 				
 				do {
-				lielums = Integer.parseInt(JOptionPane.showInputDialog("Kāds lielums picai? Piedāvājam 20cm, 30cm, 50cm"));
+				lielums = Integer.parseInt(JOptionPane.showInputDialog("Kāds lielums picai? Piedāvājumā 20cm, 30cm, 50cm"));
 				}while(lielums!=20 && lielums!=30 && lielums!=50);
 				
 				
