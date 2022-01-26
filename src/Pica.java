@@ -16,6 +16,11 @@ public class Pica {
 			cena = cena + 16.99;
 		}
 		
+		JOptionPane.showMessageDialog(null, "\tPepperoni picas sastāvdaļas\n"
+				+ "\nPepperoni desa, mozzarella, kūpināts kausētais siers, saulē kaltēta tomātu mērce, sīpolu čipsi"
+				+ "\n                                        rukola, eļļas un ķiploku mērce, oregano");
+
+		
 		return cena;
 	}
 	public static void main(String[] args) {
