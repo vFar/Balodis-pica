@@ -1,14 +1,24 @@
 import javax.swing.JOptionPane;
 
 public class Pica {
-	static double Margherita(double cena) {
+	static double Margherita(double cena, int lielums) {
+		if(lielums == 20) {
+			cena = cena + 3.14;
+		}else if(lielums == 30) {
+			cena = cena + 5.84;
+		}else {
+			//50cm
+			cena = cena + 10.34;
+		}
+		
 		
 		return cena;
 	}
 	public static void main(String[] args) {
+		//Pie cenām tika lietota cilipizza.lv ēdienkarte!
 		double cena=0;
 		String izvele;
-		int lielums=0;
+		int lielums;
 		String adrese="", vards, talrunis, veids, piegade1, dzeriens1;
 		boolean piegade=false, dzeriens=false;
 		
@@ -24,22 +34,25 @@ public class Pica {
 				veids = JOptionPane.showInputDialog("Kādu picas veidu izvēlēsies? "
 						+ "\nMargherita | Pepperoni | Pikantā | Kalifornija ");
 				
-				vards = JOptionPane.showInputDialog("Kāds Jums vārds?");
 				
+				vards = JOptionPane.showInputDialog("Kāds Jums vārds?");
 				dzeriens1 = JOptionPane.showInputDialog("Piedāvāt dzērienu no mūsu kolekcijas? "
 						+ "\nCoca-Cola +0.50centi || Sprite +0.50centi || Fanta +0.50centi || Negāzēts ūdens +0.50centi || Atstāj tukšu, ja nevēlies dzērienu");
 				
 				if(dzeriens1.equalsIgnoreCase("Coca-Cola") || dzeriens1.equalsIgnoreCase("Sprite") || dzeriens1.equalsIgnoreCase("Fanta") || dzeriens1.equalsIgnoreCase("Negāzēts ūdens")) {
 					dzeriens=true;
-					cena += 0.50;
+					cena = cena + 0.50;
 				}else {
 					dzeriens=false;
 				}
 				
+				
+				
+				do {
 				piegade1 = JOptionPane.showInputDialog("Piegāde uz mājām, jā vai nē? +3EUR");
 				if(piegade1.equalsIgnoreCase("jā")) {
 					piegade = true;
-					cena += 3;
+					cena = cena + 3;
 					adrese = JOptionPane.showInputDialog("Uz kuru adresi piegādāt picu?");
 					talrunis = JOptionPane.showInputDialog("Kāds Jums talrunis uz, kuru zvanīt?");
 				}else if(piegade1.equalsIgnoreCase("nē")) {
@@ -47,13 +60,19 @@ public class Pica {
 				}else {
 					JOptionPane.showMessageDialog(null, "Vajadzēja ievadīt tikai jā vai nē!");
 				}
+				}while(!piegade1.equalsIgnoreCase("nē"));
+				
+				
 				
 				do {
 				lielums = Integer.parseInt(JOptionPane.showInputDialog("Kāds lielums picai? Piedāvājam 20cm, 30cm, 50cm"));
 				}while(lielums!=20 && lielums!=30 && lielums!=50);
 				
+				
+				
+				
 				if(veids.equalsIgnoreCase("Margherita")) {
-					Margherita(cena);
+					Margherita(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Pepperoni")) {
 					
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
@@ -61,8 +80,9 @@ public class Pica {
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
 					
 				}else {
-					JOptionPane.showMessageDialog(null, "Picas veids neeksistē, mēģini vēlreiz!");
+					JOptionPane.showMessageDialog(null, "Picas veids pašlaik nav mūsu ēdienkartē, mēģini vēlreiz!");
 				}
+				
 				
 				break;
 			case "apskatit":
@@ -76,6 +96,6 @@ public class Pica {
 			}
 		}while(!izvele.equalsIgnoreCase("stop"));
 		
-		
+
 	}
 }
