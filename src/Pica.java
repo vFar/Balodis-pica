@@ -8,8 +8,10 @@ public class Pica {
 	public static void main(String[] args) {
 		double cena=0;
 		String izvele;
+		int lielums=0;
 		String adrese="", vards, talrunis, veids, piegade1, dzeriens1;
 		boolean piegade=false, dzeriens=false;
+		
 		
 		do {
 			izvele = JOptionPane.showInputDialog("pasutit - veikt pasūtījumu "
@@ -22,18 +24,22 @@ public class Pica {
 				veids = JOptionPane.showInputDialog("Kādu picas veidu izvēlēsies? "
 						+ "\nMargherita | Pepperoni | Pikantā | Kalifornija ");
 				
+				vards = JOptionPane.showInputDialog("Kāds Jums vārds?");
+				
 				dzeriens1 = JOptionPane.showInputDialog("Piedāvāt dzērienu no mūsu kolekcijas? "
-						+ "\nCoca-Cola +0.80centi || Sprite +0.60centi || Fanta +0.80centi || Negāzēts ūdens +0.30centi || Atstāj tukšu, ja nevēlies dzērienu");
+						+ "\nCoca-Cola +0.50centi || Sprite +0.50centi || Fanta +0.50centi || Negāzēts ūdens +0.50centi || Atstāj tukšu, ja nevēlies dzērienu");
+				
 				if(dzeriens1.equalsIgnoreCase("Coca-Cola") || dzeriens1.equalsIgnoreCase("Sprite") || dzeriens1.equalsIgnoreCase("Fanta") || dzeriens1.equalsIgnoreCase("Negāzēts ūdens")) {
 					dzeriens=true;
+					cena += 0.50;
 				}else {
 					dzeriens=false;
 				}
-				System.out.println(dzeriens);
 				
-				piegade1 = JOptionPane.showInputDialog("Piegāde uz mājām, jā vai nē?");
+				piegade1 = JOptionPane.showInputDialog("Piegāde uz mājām, jā vai nē? +3EUR");
 				if(piegade1.equalsIgnoreCase("jā")) {
 					piegade = true;
+					cena += 3;
 					adrese = JOptionPane.showInputDialog("Uz kuru adresi piegādāt picu?");
 					talrunis = JOptionPane.showInputDialog("Kāds Jums talrunis uz, kuru zvanīt?");
 				}else if(piegade1.equalsIgnoreCase("nē")) {
@@ -42,6 +48,9 @@ public class Pica {
 					JOptionPane.showMessageDialog(null, "Vajadzēja ievadīt tikai jā vai nē!");
 				}
 				
+				do {
+				lielums = Integer.parseInt(JOptionPane.showInputDialog("Kāds lielums picai? Piedāvājam 20cm, 30cm, 50cm"));
+				}while(lielums!=20 && lielums!=30 && lielums!=50);
 				
 				if(veids.equalsIgnoreCase("Margherita")) {
 					Margherita(cena);
