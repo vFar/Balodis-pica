@@ -20,6 +20,7 @@ public class Pica {
 				+ "\nPepperoni desa, mozzarella, kūpināts kausētais siers, saulē kaltēta tomātu mērce, sīpolu čipsi"
 				+ "\n                                        rukola, eļļas un ķiploku mērce, oregano");
 
+		JOptionPane.showMessageDialog(null, "Pirmo reizi pieminēts pepperoni bija 1919. gada Ņujorkā, ASV. Pašā laikā, sākās ēra, kurā desu lietoja kā piedevu vairākos itāļu picērijās");
 		
 		return cena;
 	}
