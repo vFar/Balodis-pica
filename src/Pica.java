@@ -5,6 +5,19 @@ public class Pica {
 		
 		return cena;
 	}
+	
+	static double Pepperoni(double cena, int lielums) {
+		if(lielums==20) {
+			cena = cena + 5.49;
+		}else if(lielums==30) {
+			cena = cena + 9.99;
+		}else {
+			//50cm
+			cena = cena + 16.99;
+		}
+		
+		return cena;
+	}
 	public static void main(String[] args) {
 		double cena=0;
 		String izvele;
@@ -55,7 +68,7 @@ public class Pica {
 				if(veids.equalsIgnoreCase("Margherita")) {
 					Margherita(cena);
 				}else if(veids.equalsIgnoreCase("Pepperoni")) {
-					
+					Pepperoni(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
 					
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
