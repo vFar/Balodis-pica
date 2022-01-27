@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 import javax.swing.JOptionPane;
 
 public class Pica {
@@ -5,11 +10,45 @@ public class Pica {
 		
 		return cena;
 	}
+	
+	static void apskatit(double cena, String vards, int lielums, String adrese, String veids, boolean piegade, boolean dzeriens, String talrunis, String piegade1, String dzeriens1) {
+		if(piegade=true) {
+			
+		}else {
+			adrese = "NAV";
+			talrunis = "NAV";
+			piegade1 = "";
+		}
+		
+		try {
+			FileWriter writer = new FileWriter("pasutijums.txt", false);
+			PrintWriter write = new PrintWriter(writer);
+			write.print(vards+", "+cena+", "+lielums+"cm, "+adrese+", "+veids+", piegāde - "+piegade1+", dzēriens - "+dzeriens1);
+			write.close();
+		}catch(Exception e) {
+			System.out.println("Kļūda");
+		}
+		
+		
+		String teksts, nolasits = "";
+		try {
+			FileReader reader = new FileReader("pasutijums.txt");
+			BufferedReader read = new BufferedReader(reader);
+			while((teksts = read.readLine()) !=null) {
+				nolasits += teksts;
+			}
+			read.close();
+			
+			JOptionPane.showMessageDialog(null, nolasits);
+		}catch(Exception e) {
+			System.out.println("Kļūda!");
+		}
+	}
 	public static void main(String[] args) {
 		double cena=0;
 		String izvele;
 		int lielums=0;
-		String adrese="", vards, talrunis, veids, piegade1, dzeriens1;
+		String adrese="", vards="", talrunis="", veids="", piegade1="", dzeriens1="";
 		boolean piegade=false, dzeriens=false;
 		
 		
@@ -66,8 +105,10 @@ public class Pica {
 				
 				break;
 			case "apskatit":
+				apskatit(cena, vards, lielums, adrese, veids, piegade, dzeriens, talrunis, piegade1, dzeriens1);
 				break;
 			case "cena":
+				JOptionPane.showMessageDialog(null, "Pašreizējā cena "+cena);
 				break;
 			case "stop": JOptionPane.showMessageDialog(null, "Pasūtījums veiksmīgi atcelts, jauku dienu!"); break;
 			default: JOptionPane.showMessageDialog(null, "Šādas darbības nepastāv, zvani uz talruni 676553312 un veic pasūtījumu vēlreiz!");
