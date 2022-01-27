@@ -5,6 +5,21 @@ public class Pica {
 		
 		return cena;
 	}
+	
+	static double Pikanta(double cena, int lielums) {
+		if(lielums==20) {
+			cena += 5.49;
+		}else if(lielums==30) {
+			cena += 9.99;
+		}else {
+			//50cm
+			cena += 16.99;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Pikantās picas sastāvdaļas \n"
+				+ "\nVistas gaļas siers, konservēti ananasi, tomātu mērce, eļļas un ķiploku mērce, oregano");
+		return cena;
+	}
 	public static void main(String[] args) {
 		double cena=0;
 		String izvele;
@@ -57,7 +72,7 @@ public class Pica {
 				}else if(veids.equalsIgnoreCase("Pepperoni")) {
 					
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
-					
+					Pikanta(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
 					
 				}else {
