@@ -17,7 +17,11 @@ public class Pica {
 		}
 		
 		JOptionPane.showMessageDialog(null, "Pikantās picas sastāvdaļas \n"
-				+ "\nVistas gaļas siers, konservēti ananasi, tomātu mērce, eļļas un ķiploku mērce, oregano");
+				+ "\nVistas gaļas siers, konservēti ananasi, tomātu mērce, eļļas un ķiploku mērce, oregano", "Sastāvdaļas", JOptionPane.INFORMATION_MESSAGE);
+		
+		JOptionPane.showMessageDialog(null, "Pastāv visādu pikantās picas veidi, piemēram, Kaprichoza, Diablo - kura sastāv tikai no sēnēm, karstajiem pipariem \n"
+				+ "salami un vairākiem siera veidiem. Abi ir garšīgi, bet diezgan pikanti.", "Neliela vēsture", JOptionPane.INFORMATION_MESSAGE);
+		
 		return cena;
 	}
 	public static void main(String[] args) {
