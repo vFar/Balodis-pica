@@ -105,6 +105,23 @@ public class Pica {
 		return cena;
 	}
 	
+	static double Kalifornija(double cena, int lielums) {
+		if(lielums==20) {
+			cena += 5.49;
+		}else if(lielums==30) {
+			cena += 9.99;
+		}else {
+			//50cm
+			cena += 16.99;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Kalifornijas picas sastāvdaļas \n"
+				+ "\nAuksti kūpināts bekons, mozzarella, kūpināts kausētais siers, sarkanie sīpoli, BBQ mērce, pētersīļi, eļļas un ķiploku mērce, oregano");
+		
+		JOptionPane.showMessageDialog(null, "Kalifornijas stila picas tika izgudrotas apmēram 1980. gados no Ed LaDou ar segvārdu Picas princis");
+		return cena;
+	}
+
 	public static void main(String[] args) {
 		//Pie cenām tika lietota cilipizza.lv ēdienkarte!
 		double cena=0;
@@ -126,7 +143,7 @@ public class Pica {
 				do {
 				veids = JOptionPane.showInputDialog("Kādu picas veidu izvēlēsies? "
 						+ "\nMargherita | Pepperoni | Pikantā | Kalifornija | atcelt");
-				}while(veids.equalsIgnoreCase("atcelt"));
+				}while(veids.equalsIgnoreCase("Margherita") && veids.equalsIgnoreCase("Pepperoni") && veids.equalsIgnoreCase("Pikantā") && veids.equalsIgnoreCase("Kalifornija") );
 				
 				if(veids.equalsIgnoreCase("atcelt")) {
 					JOptionPane.showMessageDialog(null, "Pasūtījums atcelts, jauku dienu!");
@@ -176,7 +193,7 @@ public class Pica {
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
 					cena = Pikanta(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
-					
+					cena = Kalifornija(cena, lielums);
 				}else {
 					JOptionPane.showMessageDialog(null, "Picas veids pašlaik nav mūsu ēdienkartē, mēģini vēlreiz!");
 				}
