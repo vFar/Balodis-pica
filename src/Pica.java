@@ -36,6 +36,7 @@ public class Pica {
 					dzeriens=false;
 				}
 				
+				do {
 				piegade1 = JOptionPane.showInputDialog("Piegāde uz mājām, jā vai nē? +3EUR");
 				if(piegade1.equalsIgnoreCase("jā")) {
 					piegade = true;
@@ -44,9 +45,8 @@ public class Pica {
 					talrunis = JOptionPane.showInputDialog("Kāds Jums talrunis uz, kuru zvanīt?");
 				}else if(piegade1.equalsIgnoreCase("nē")) {
 					piegade = false;
-				}else {
-					JOptionPane.showMessageDialog(null, "Vajadzēja ievadīt tikai jā vai nē!");
 				}
+				}while(!piegade1.equalsIgnoreCase("jā") && !piegade1.equalsIgnoreCase("nē"));
 				
 				do {
 				lielums = Integer.parseInt(JOptionPane.showInputDialog("Kāds lielums picai? Piedāvājam 20cm, 30cm, 50cm"));
