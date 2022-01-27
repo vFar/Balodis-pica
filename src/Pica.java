@@ -5,6 +5,19 @@ public class Pica {
 		
 		return cena;
 	}
+	
+	static double Kalifornija(double cena, int lielums) {
+		if(lielums==20) {
+			cena += 5.49;
+		}else if(lielums==30) {
+			cena += 9.99;
+		}else {
+			//50cm
+			cena += 16.99;
+		}
+		
+		return cena;
+	}
 	public static void main(String[] args) {
 		double cena=0;
 		String izvele;
@@ -59,15 +72,17 @@ public class Pica {
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
 					
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
-					
+					Kalifornija(cena, lielums);
 				}else {
 					JOptionPane.showMessageDialog(null, "Picas veids neeksistē, mēģini vēlreiz!");
 				}
 				
 				break;
 			case "apskatit":
+				
 				break;
 			case "cena":
+				
 				break;
 			case "stop": JOptionPane.showMessageDialog(null, "Pasūtījums veiksmīgi atcelts, jauku dienu!"); break;
 			default: JOptionPane.showMessageDialog(null, "Šādas darbības nepastāv, zvani uz talruni 676553312 un veic pasūtījumu vēlreiz!");
