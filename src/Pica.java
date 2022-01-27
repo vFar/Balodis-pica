@@ -16,6 +16,9 @@ public class Pica {
 			cena += 16.99;
 		}
 		
+		JOptionPane.showMessageDialog(null, "Kalifornijas picas sastāvdaļas \n"
+				+ "\nAuksti kūpināts bekons, mozzarella, kūpināts kausētais siers, sarkanie sīpoli, BBQ mērce, pētersīļi, eļļas un ķiploku mērce, oregano");
+		
 		return cena;
 	}
 	public static void main(String[] args) {
