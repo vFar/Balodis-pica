@@ -86,6 +86,25 @@ public class Pica {
 		return cena;
 	}
 	
+	static double Pepperoni(double cena, int lielums) {
+		if(lielums==20) {
+			cena = cena + 5.49;
+		}else if(lielums==30) {
+			cena = cena + 9.99;
+		}else {
+			//50cm
+			cena = cena + 16.99;
+		}
+		
+		JOptionPane.showMessageDialog(null, "\tPepperoni picas sastāvdaļas\n"
+				+ "\nPepperoni desa, mozzarella, kūpināts kausētais siers, saulē kaltēta tomātu mērce, sīpolu čipsi"
+				+ "\n                                        rukola, eļļas un ķiploku mērce, oregano");
+
+		JOptionPane.showMessageDialog(null, "Pirmo reizi pieminēts pepperoni bija 1919. gada Ņujorkā, ASV. Pašā laikā, sākās ēra, kurā desu lietoja kā piedevu vairākos itāļu picērijās");
+		
+		return cena;
+	}
+	
 	public static void main(String[] args) {
 		//Pie cenām tika lietota cilipizza.lv ēdienkarte!
 		double cena=0;
@@ -153,7 +172,7 @@ public class Pica {
 				if(veids.equalsIgnoreCase("Margherita")) {
 					cena = Margherita(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Pepperoni")) {
-					
+					cena = Pepperoni(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
 					cena = Pikanta(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
