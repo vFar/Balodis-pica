@@ -19,6 +19,7 @@ public class Pica {
 		JOptionPane.showMessageDialog(null, "Kalifornijas picas sastāvdaļas \n"
 				+ "\nAuksti kūpināts bekons, mozzarella, kūpināts kausētais siers, sarkanie sīpoli, BBQ mērce, pētersīļi, eļļas un ķiploku mērce, oregano");
 		
+		JOptionPane.showMessageDialog(null, "Kalifornijas stila picas tika izgudrotas apmēram 1980. gados no Ed LaDou ar segvārdu Picas princis");
 		return cena;
 	}
 	public static void main(String[] args) {
