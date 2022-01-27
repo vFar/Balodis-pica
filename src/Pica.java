@@ -67,6 +67,25 @@ public class Pica {
 		}
 	}
 	
+	static double Pikanta(double cena, int lielums) {
+		if(lielums==20) {
+			cena += 5.49;
+		}else if(lielums==30) {
+			cena += 9.99;
+		}else {
+			//50cm
+			cena += 16.99;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Pikantās picas sastāvdaļas \n"
+				+ "\nVistas gaļas siers, konservēti ananasi, tomātu mērce, eļļas un ķiploku mērce, oregano", "Sastāvdaļas", JOptionPane.INFORMATION_MESSAGE);
+		
+		JOptionPane.showMessageDialog(null, "Pastāv visādu pikantās picas veidi, piemēram, Kaprichoza, Diablo - kura sastāv tikai no sēnēm, karstajiem pipariem \n"
+				+ "salami un vairākiem siera veidiem. Abi ir garšīgi, bet diezgan pikanti.", "Neliela vēsture", JOptionPane.INFORMATION_MESSAGE);
+		
+		return cena;
+	}
+	
 	public static void main(String[] args) {
 		//Pie cenām tika lietota cilipizza.lv ēdienkarte!
 		double cena=0;
@@ -136,7 +155,7 @@ public class Pica {
 				}else if(veids.equalsIgnoreCase("Pepperoni")) {
 					
 				}else if(veids.equalsIgnoreCase("Pikantā")) {
-					
+					cena = Pikanta(cena, lielums);
 				}else if(veids.equalsIgnoreCase("Kalifornija")) {
 					
 				}else {
