@@ -2,10 +2,22 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 public class Pica {
+	static Scanner data = new Scanner(System.in);
+	public static void COUPON(){
+		Random rand = new Random();
+		int random = rand.nextInt(100)+1;
+		
+		if(random == 40){
+			System.out.println("ESI VINNĒJIS 40% ATLAIŽU KUPONU!");
+		}
+		
+	}
 	public static double Margherita(double cena1, int lielums) {
 		
 		if(lielums == 20) {
@@ -18,7 +30,7 @@ public class Pica {
 			System.out.println("Kļūda");
 		}
 		
-		JOptionPane.showMessageDialog(null, "\tMargaritas picas sastāvdaļas"
+		System.out.println("\tMargaritas picas sastāvdaļas"
 				+ "\nMozarella, tomātu mērce, eļļas un ķiploku mērce, oregano");
 		
 		
@@ -96,11 +108,11 @@ public class Pica {
 			cena = cena + 16.99;
 		}
 		
-		JOptionPane.showMessageDialog(null, "\tPepperoni picas sastāvdaļas\n"
+		System.out.println("\tPepperoni picas sastāvdaļas\n"
 				+ "\nPepperoni desa, mozzarella, kūpināts kausētais siers, saulē kaltēta tomātu mērce, sīpolu čipsi"
 				+ "\n                                        rukola, eļļas un ķiploku mērce, oregano");
 
-		JOptionPane.showMessageDialog(null, "Pirmo reizi pieminēts pepperoni bija 1919. gada Ņujorkā, ASV. Pašā laikā, sākās ēra, kurā desu lietoja kā piedevu vairākos itāļu picērijās");
+		System.out.println("Pirmo reizi pieminēts pepperoni bija 1919. gada Ņujorkā, ASV. Pašā laikā, sākās ēra, kurā desu lietoja kā piedevu vairākos itāļu picērijās");
 		
 		return cena;
 	}
@@ -115,10 +127,10 @@ public class Pica {
 			cena += 16.99;
 		}
 		
-		JOptionPane.showMessageDialog(null, "Kalifornijas picas sastāvdaļas \n"
+		System.out.println("Kalifornijas picas sastāvdaļas \n"
 				+ "\nAuksti kūpināts bekons, mozzarella, kūpināts kausētais siers, sarkanie sīpoli, BBQ mērce, pētersīļi, eļļas un ķiploku mērce, oregano");
 		
-		JOptionPane.showMessageDialog(null, "Kalifornijas stila picas tika izgudrotas apmēram 1980. gados no Ed LaDou ar segvārdu Picas princis");
+		System.out.println("Kalifornijas stila picas tika izgudrotas apmēram 1980. gados no Ed LaDou ar segvārdu Picas princis");
 		return cena;
 	}
 
@@ -132,11 +144,14 @@ public class Pica {
 		String izvele;
 		
 		
+		COUPON();
+		
 		do {
 			izvele = JOptionPane.showInputDialog("pasutit - veikt pasūtījumu "
 					+ "\napskatit - apskatīt savu pasūtījumu "
 					+ "\ncena - pašreizējā cena "
 					+ "\nstop - atcelt pasūtījumu");
+			
 			
 			switch(izvele) {
 			case "pasutit":
@@ -213,5 +228,8 @@ public class Pica {
 			}
 			}while(!izvele.equalsIgnoreCase("stop"));
 		
+		
+		
+			data.close();
 		}
 	}

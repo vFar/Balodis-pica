@@ -1,1 +1,1 @@
-Markuss, 23456776, cena - 13.49, 30cm, Bērziņa iela 3, kalifornija, piegāde - Jā, dzēriens - Fanta
+markuss, NAV, cena - 3.64, 20cm, NAV, margherita, piegāde - nē, dzēriens - coca-cola
